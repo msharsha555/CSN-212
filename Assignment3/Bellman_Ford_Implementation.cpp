@@ -26,7 +26,7 @@ void Bellman(int v,int e,edge* ed)
 	}
 	
 	int flag=0;
-	
+	//Check if the graph has a negative cycle.
 	for(int i=0;i<e;i++)
 		if(dis[ed[i].src]+ed[i].wt<dis[ed[i].des] && dis[ed[i].src]!= INT_MAX)	
 			{flag=1;break;}
