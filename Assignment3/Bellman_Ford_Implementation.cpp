@@ -23,10 +23,26 @@ void Bellman(int v,int e,edge* ed)
 							  		dis[ed[j].des]=ed[j].wt+dis[ed[j].src];
 					}
 			}
-			
-	if(k==0) cout<<"Optimal Answer is ";
-	for(int i=0;i<v;i++) {cout<<dis[i]<<" ";}cout<<endl;
 	}
+	
+	int flag=0;
+	
+	for(int i=0;i<e;i++)
+		if(dis[ed[i].src]+ed[i].wt<dis[ed[i].des] && dis[ed[i].src]!= INT_MAX)	
+			{flag=1;break;}
+	
+	if(flag)	
+		
+		cout<<"Graph contains negative cycles"<<endl;
+	else 
+		{	
+			cout<<"Optimal Answer is ";
+			
+			for(int i=0;i<v;i++) 
+				cout<<dis[i]<<" ";
+			
+			cout<<endl;
+		}
 
 }
 int main() 
