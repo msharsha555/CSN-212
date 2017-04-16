@@ -107,3 +107,20 @@ int main()
     convexHull(ConvexArray, n);
     return 0;
 }   
+/*
+Input:
+6
+5 6
+1 1
+0 4
+2 -1 
+-5 -4
+1 2
+
+Output:
+(5, 6)
+(0, 4)
+(2, -1)
+(-5, -4)
+
+*/
